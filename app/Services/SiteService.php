@@ -8,7 +8,7 @@ class SiteService
 {
     public function getSite($siteId)
     {
-        $siteRepo = new SiteRepository();
+        $siteRepo = app()->make('SiteRepository');
         return  $siteRepo->getSite($siteId);
     }
 }

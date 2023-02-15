@@ -6,15 +6,16 @@ use App\Repositories\PageRepository;
 
 class PageService
 {
+
     public function getSitePages($siteId)
     {
-        $pageRepo = new PageRepository();
+        $pageRepo = app()->make('PageRepository');
         return $pageRepo->getSitePages($siteId);
     }
     
     public function getPage($siteId, $pageId)
     {
-        $pageRepo = new PageRepository();
+        $pageRepo = app()->make('PageRepository');
         return $pageRepo->getPage($siteId, $pageId);
     }
 }
