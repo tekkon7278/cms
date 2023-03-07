@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Services;
 use App\Repositories;
+use App\Entities;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,6 +14,9 @@ class AppServiceProvider extends ServiceProvider
         'SiteService' => Services\SiteService::class,
         'SiteRepository' => Repositories\SiteRepository::class,
         'PageRepository' => Repositories\PageRepository::class,
+        'Site' => Entities\Site::class,
+        'Page' => Entities\Page::class,
+        'Content' => Entities\Content::class,
     ];
     /**
      * Register any application services.

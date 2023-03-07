@@ -7,6 +7,15 @@ use App\Entities\Site;
 
 class SiteRepository extends AbstractRepository
 {
+    public function getSites()
+    {
+        $siteModel = new SiteModel();
+        $siteRows = $siteModel->get();
+
+        $entities = $this->createEntityCollection('Site', $siteRows);
+        return $entities;
+    }
+
     public function getSite($siteId)
     {
         $siteModel = new SiteModel();
@@ -14,8 +23,9 @@ class SiteRepository extends AbstractRepository
             ->where('site_id', $siteId)
             ->first();
 
-        $entity = $this->createEntity(Site::class, $siteRow);
+        $entity = $this->createEntity('Site', $siteRow);
         return $entity;
     }
+
 
 }

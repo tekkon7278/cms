@@ -12,7 +12,7 @@ abstract class AbstractRepository
     {
         $entityInstance = $entity;
         if (is_string($entity)) {
-            $entityInstance = new $entity();
+            $entityInstance = app()->make($entity);
         }
         
         $inputArray = $model;

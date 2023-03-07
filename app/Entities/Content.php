@@ -5,7 +5,8 @@ namespace App\Entities;
 class Content extends AbstractEntity
 {
     protected $propertyKeyMap =[
-        'id' => 'site_id',
+        'id' => 'content_id',
+        'pageId' => 'page_id',
         'title' => 'content_title',
         'content' => 'content',
     ];

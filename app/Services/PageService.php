@@ -18,4 +18,16 @@ class PageService
         $pageRepo = app()->make('PageRepository');
         return $pageRepo->getPage($siteId, $pageId);
     }
+    
+    public function createContent($pageId, $content, $beforeContentId)
+    {
+        $pageRepo = app()->make('PageRepository');
+        return $pageRepo->createContent($pageId, $content, $beforeContentId);
+    }
+
+    public function updateContent($contentId, $content)
+    {
+        $pageRepo = app()->make('PageRepository');
+        return $pageRepo->updateContent($contentId, $content);
+    }
 }

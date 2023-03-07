@@ -11,9 +11,8 @@ class PageController extends Controller
         $siteService = app()->make('SiteService');
         $site = $siteService->getSite($siteId);
 
-        $pageService = app()->make('PageService');
-        $pages = $pageService->getSitePages($siteId);
-        $currentPage = $pageService->getPage($siteId, $pageId);
+        $pages = $siteService->getSitePages($siteId);
+        $currentPage = $siteService->getSitePage($siteId, $pageId);
 
         return view('index', [
             'site' => $site,

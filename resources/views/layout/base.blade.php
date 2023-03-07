@@ -2,7 +2,7 @@
 <html>
   <head>
     @vite([
-      'resources/scss/base.scss'
+      'resources/scss/base.scss',
     ])
     <title>@yield('title')</title>
   </head>
